@@ -2,23 +2,13 @@
 #include <linux/slab.h>
 #include <linux/pci.h>
 
+#include "print_variables.h"
+
 
 static int my_init(void)
 {
-	char *mem_chunk;
-
-	mem_chunk = kmalloc(1000, GFP_KERNEL);
-	if (NULL == mem_chunk) {
-		return 1;
-	}
-	printk(KERN_INFO "Memory chunk address:       %p\n", mem_chunk);
-	printk(KERN_INFO "mem_chunk variable address: %p\n", &mem_chunk);
-	printk(KERN_INFO "'%pf' address is '%p'\n", &my_init, &my_init);
-	printk(KERN_INFO "'%pf' address is '%p'\n", &__pci_register_driver,
-							&__pci_register_driver);
-	printk(KERN_INFO "jiffies address is '%p'\n", &jiffies);
-
-	kfree(mem_chunk);
+	printk(KERN_INFO "-------------First homework-------------\n");
+	print_my_homework();
 	return 0;
 }
 

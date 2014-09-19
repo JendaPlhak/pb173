@@ -1,7 +1,8 @@
 KDIR=/lib/modules/$(shell uname -r)/build
 KBUILD=$(MAKE) -C $(KDIR) M=$(PWD)
 
-obj-m := pb173.o
+obj-m := first_homework.o
+first_homework-objs := print_variables.o pb173.o
 # obj-m := pb173_xy.o
 
 # pb173_xy-y := pb173.o druhy.o
