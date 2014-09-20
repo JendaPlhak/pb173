@@ -21,7 +21,7 @@ void print_my_homework(void)
                         &print_my_homework, &print_my_homework);
     printk(KERN_INFO "%pf address: %p\n",
                         &__pci_register_driver, &__pci_register_driver);
-    printk(KERN_INFO "%pS", &__builtin_return_address);
+    printk(KERN_INFO "Return name + offset: %pS\n", __builtin_return_address(0));
 
     kfree(mem_chunk);
 }
